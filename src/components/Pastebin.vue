@@ -63,7 +63,7 @@ textarea {
     border-width: 1px;
     border-color: var(--placeholder);
     text-align: center;
-    padding: 10px;
+    padding: 10px 0px;
     background-color: var(--blue);
     transition: opacity 0.2s ease-in-out, visibility 0.2s ;
 }
