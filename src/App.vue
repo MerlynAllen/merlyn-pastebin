@@ -8,11 +8,7 @@ export default {
 </script>
 
 <template>
-  <div class="vertical">
-    <div class="horizontal">
       <Pastebin @click="onclick"></Pastebin>
-    </div>
-  </div>
 </template>
 
 <style scoped>

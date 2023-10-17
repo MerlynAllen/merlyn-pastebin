@@ -3,46 +3,37 @@ html {
     background-color: var(--dark-blue);
     color: var(--white-pink);
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    margin: 0px;
+    overflow-y: auto;
     font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    background-color: var(--dark-blue);
-}
-
-#app {
-    width: 100%;
-    height: 100%;
+    /* min-height: 100vh;*/
+    min-height: 100vh;
     margin: 0px;
 }
 
 .vertical {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-.horizontal {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    height: 100%;
-    width: 80%;
-    max-width: 400px;
-    min-width: 200px;
+    /* min-height: 100vh; */
+    min-height: 100vh;
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    margin: auto;
 }
 
 .container {
     width: 100%;
-    max-height: 800px;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
+    margin: 20px 0;
 }
 
 .textbox {
@@ -59,6 +50,9 @@ body {
     font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
     color: var(--white-pink);
     margin: 30px 0px;
+    display: inline-block;
+    word-break: break-all;
+    /* text-overflow: ellipsis; */
 }
 
 .textbox::placeholder {
