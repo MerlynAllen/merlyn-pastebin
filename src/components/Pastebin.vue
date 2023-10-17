@@ -9,22 +9,29 @@ export default {
         const paste = encodedPaste; // Do not decode, decode in client
         const decodedPaste = decodeURIComponent(encodeURI(atob(paste)));
 
-        navigator.clipboard.writeText(self.msg);
         const msg = ref(decodedPaste);
         const showmsg = ref(false);
+
         return {
             msg,
             showmsg
         }
     }, 
+    mounted() {
+
+        navigator.clipboard.writeText(self.msg);
+        this.showMessage();
+    },
     methods:{
-        
-        onclick() {
-            navigator.clipboard.writeText(self.msg);
+        showMessage() {
             this.showmsg = true;
             setTimeout(() => {
                 this.showmsg = false;
             }, 3000);
+        },
+        onclick() {
+            navigator.clipboard.writeText(self.msg);
+            this.showMessage();
         }
 
     }
@@ -51,8 +58,10 @@ textarea {
     left: 0;
     right: 0;
     top: 80%;
-    border-style: none;
+    border-style: solid;
     border-radius: 10px;
+    border-width: 1px;
+    border-color: var(--placeholder);
     text-align: center;
     padding: 10px;
     background-color: var(--blue);
