@@ -22,14 +22,13 @@ export default {
 
     const msg = ref(decodedPaste);
     const showmsg = ref(false);
-
     return {
       msg,
       showmsg,
     };
   },
   mounted() {
-    navigator.clipboard.writeText(self.msg);
+    navigator.clipboard.writeText(this.msg);
     this.showMessage();
   },
   methods: {
@@ -40,7 +39,7 @@ export default {
       }, 3000);
     },
     onclick() {
-      navigator.clipboard.writeText(self.msg);
+      navigator.clipboard.writeText(this.msg);
       this.showMessage();
     },
   },
@@ -80,6 +79,7 @@ textarea {
   color: var(--blue);
   font-size: 12px;
   font-weight: 100;
+  backdrop-filter: blur(0px);
 }
 
 .show {
@@ -87,6 +87,6 @@ textarea {
   opacity: 0.8;
   transition: opacity 0.2s ease-in-out, backdrop-filter 0.2s;
 
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(20px);
 }
 </style>
